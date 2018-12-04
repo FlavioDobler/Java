@@ -1,7 +1,7 @@
 package br.com.db1.db1start.aula11;
 
 public class Calculadora {
-	//SOMA
+	//Soma
 	public int calcularSoma(int numero1, int numero2) {
 		int soma = numero1 + numero2;
 		return soma;

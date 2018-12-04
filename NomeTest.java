@@ -47,32 +47,51 @@ public class NomeTest {
 	@Test 
 	public void deveRetornarAsPrimeirasLetrasDoNome() {
 		Nome nome = new Nome ();
-		String primeirasLetras = nome.primeirasLetrasDoNome("Flavio Dobler");
-		Assert.assertEquals("Flav", primeirasLetras);
+		String primeirasLetras = nome.primeirasLetrasDoNome("Maiko Cunha");
+		Assert.assertEquals("Maik", primeirasLetras);
 	}
 
 	@Test
 	public void deveRetornarAPartirDaTerceiraLetraDoNome() {
 		Nome nome = new Nome ();
-		String letrasAPartirDoTerceiro = nome.exibindoAPartirDaTerceiraLetraDoNome("Flavio Dobler");
-		Assert.assertEquals("vio Dobler", letrasAPartirDoTerceiro);
+		String letrasAPartirDoTerceiro = nome.exibindoAPartirDaTerceiraLetraDoNome("Maiko Cunha");
+		Assert.assertEquals("ko Cunha", letrasAPartirDoTerceiro);
 	}
 
 	@Test 
 	public void deveRetornarAsUltimasLetrasDoNome() {
 		Nome nome = new Nome ();
-		String ultimasLetrasDoNome = nome.exibindoAsQuatroUltimasLetrasDoNome("Flavio Dobler");
-		Assert.assertEquals("obler", ultimasLetrasDoNome);
+		String ultimasLetrasDoNome = nome.exibindoAsQuatroUltimasLetrasDoNome("Maiko Cunha");
+		Assert.assertEquals("unha", ultimasLetrasDoNome);
 	}
 	
 	@Test
 	public void deveRetornarAlunoNoLugarDoPrimeiroNome() {
 		Nome nome = new Nome ();
-		String primeiroNomeSubstituido = nome.substituindoOPrimeiroNomePorAluno("Flavio Dobler");
-		Assert.assertEquals("Aluno Dobler", primeiroNomeSubstituido);
+		String primeiroNomeSubstituido = nome.substituindoOPrimeiroNomePorAluno("Maiko Cunha");
+		Assert.assertEquals("Aluno Cunha", primeiroNomeSubstituido);
 	}
 
+	@Test
+	public void deveRetornarStringSeparada() {
+		Nome nome = new Nome ();
+		String[] palavrasSeparadas = nome.exibindoPalavrasSeparadamente("banana, maçã, melancia");
+		String[] palavraEsperada = {"banana","maçã","melancia"};
+		Assert.assertEquals(palavraEsperada, palavrasSeparadas);
+	}
 
-
+	@Test
+	public void deveRetornarQuantidadeDeVogais() {
+		Nome nome = new Nome ();
+		int quantidadeDeVogais = nome.exibindoQuantidadeDeVogais("MAiko");
+		Assert.assertEquals(3,quantidadeDeVogais);
+	}
+	
+	@Test
+	public void deveRetornarStringInversa() {
+		Nome nome = new Nome ();
+		String palavraInversa = nome.exibindoPalavraContrario("Maiko");
+		Assert.assertEquals("okiaM",palavraInversa);
+	}
 
 }

@@ -35,23 +35,62 @@ public class Nome {
 
 	//7
 	public String exibindoAPartirDaTerceiraLetraDoNome(String nome) {
-		return nome.substring(3,13);
+		int numeroDeCaracteres = nome.length();
+		nome = nome.substring(3,numeroDeCaracteres);
+		return nome;
 	}
 
 	//8
 	public String exibindoAsQuatroUltimasLetrasDoNome(String nome) {
-		return nome.substring(8,13);
+		int numeroDeCaracteres = nome.length();
+		int caracteresMenosQuatro = numeroDeCaracteres - 4;
+		nome = nome.substring(caracteresMenosQuatro, numeroDeCaracteres );
+		return nome;
 	}
 	
 	//9
 	public String substituindoOPrimeiroNomePorAluno(String nome) {
-	    nome = "Flavio Dobler";
-		nome = nome.replace("Flavio", "Aluno");
+		String[] nomeSeparado = nome.split(" ");
+		nomeSeparado[0]= "Aluno";
+		nome = nome.join(" ", nomeSeparado);
 		return nome;
-		
 	}
 	
+	//10
+	public String[] exibindoPalavrasSeparadamente(String palavra) {
+		String[] palavraSeparada = palavra.split(", ");
+		for (int i = 0; i < palavraSeparada.length; i++) {
+			System.out.println(palavraSeparada[i]);
+		}
+		return palavraSeparada;
+	}
+	
+	//11	
+	public int exibindoQuantidadeDeVogais(String texto) {
+		int totalvogais = 0;
+		texto = texto.toLowerCase();
+		for (int i = 0; i < texto.length(); i++) {
+	            char c = texto.charAt(i);
+	            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+	                totalvogais++;
+	            }
+	        }
+	        return totalvogais;
+	}
+	
+	//12 
+	public String exibindoPalavraContrario(String palavra) {
+		String inversa = "";
+	    for (int i = palavra.length() - 1; i >= 0; i--)
+	      inversa += palavra.charAt(i);
+	    return inversa;
+	  }
+
 }
+	
+	
+
+
 	
 
 
